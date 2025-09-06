@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function MovieImage({ posterPath, title, variant }: Props) {
-  const fallbackSrc = "/public/icons_413470.svg";
+  const fallbackSrc = "/icons_413470.svg";
   const src = posterPath
     ? `https://image.tmdb.org/t/p/w500${posterPath}`
     : fallbackSrc;
