@@ -1,19 +1,20 @@
 import type { Movie } from "../../types/movie";
 import MovieImage from "../MovieImage/MovieImage";
 import styles from "./MovieGrid.module.css";
-interface Props {
+
+interface MovieGridProps {
   movies: Movie[];
   onSelect: (movie: Movie) => void;
 }
 
-export default function MovieGrid({ movies, onSelect }: Props) {
+export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
   return (
     <ul className={styles.grid}>
       {movies.map((movie) => (
         <li key={movie.id}>
           <div className={styles.card} onClick={() => onSelect(movie)}>
             <MovieImage
-              posterPath={movie.backdrop_path}
+              imagePath={movie.poster_path}
               title={movie.title}
               variant="grid"
             />

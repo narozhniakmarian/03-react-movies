@@ -34,7 +34,7 @@ function App() {
   }
   return (
     <>
-      <Toaster position="top-right" />
+      <Toaster position="top-center" />
 
       <SearchBar onSubmit={handkeSearch} />
 

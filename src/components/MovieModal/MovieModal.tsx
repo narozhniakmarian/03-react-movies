@@ -5,12 +5,12 @@ import { createPortal } from "react-dom";
 import MovieImage from "../MovieImage/MovieImage";
 import ReactStars from "react-stars";
 
-interface Props {
+interface MovieModalProps {
   movie: Movie;
   onClose: () => void;
 }
 
-export default function MovieModal({ movie, onClose }: Props) {
+export default function MovieModal({ movie, onClose }: MovieModalProps) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
     const handleEsc = (event: KeyboardEvent) => {
@@ -44,7 +44,7 @@ export default function MovieModal({ movie, onClose }: Props) {
         </button>
 
         <MovieImage
-          posterPath={movie.poster_path}
+          imagePath={movie.backdrop_path}
           title={movie.title}
           variant="modal"
         />

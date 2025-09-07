@@ -1,14 +1,15 @@
 import styles from "./MovieImage.module.css";
+
 interface Props {
-  posterPath: string | null;
+  imagePath: string | null;
   title: string;
   variant: "grid" | "modal";
 }
 
-export default function MovieImage({ posterPath, title, variant }: Props) {
+export default function MovieImage({ imagePath, title, variant }: Props) {
   const fallbackSrc = "/icons_413470.svg";
-  const src = posterPath
-    ? `https://image.tmdb.org/t/p/w500${posterPath}`
+  const src = imagePath
+    ? `https://image.tmdb.org/t/p/w500${imagePath}`
     : fallbackSrc;
   const imageClass = variant === "modal" ? styles.modalImage : styles.gridImage;
   return (
